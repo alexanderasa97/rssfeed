@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Notícias BBC</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+
+    <div id="tela-carregando">
+        <div class="espaco"></div>
+        <div class="terminal">
+          <p class="linha">[SISTEMA INICIADO...]</p>
+          <p class="linha">[CARREGANDO DADOS BBC VIA AWS]</p>
+          <div class="barra-progresso">
+            <div class="progresso"></div>
+          </div>
+          <p class="linha">[AGUARDE...]</p>
+        </div>
+    </div>
+
+
+    <div id="noticias" class="hidden">
+        <h1>Últimas Notícias da BBC</h1>
+        <div id="conteudo" class="conteudo">
+   
+          <div id="cards-container"></div>
+
+          <div id="logBox" class="log-box">Carregando logs...</div>
+
+          <footer class="rodape">
+            <p>Desenvolvido por: Alexander, Davi, Gabriel, Victoria</p>
+          </footer>
+          
+      
+        </div>
+
+     
+    </div>
+
+ 
+
+  <script src="./js/logs.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+</html>

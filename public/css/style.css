@@ -1,0 +1,211 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #000;
+  padding: 2rem;
+  margin: 0;
+  color: white;
+  min-height: 100vh; 
+}
+
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+
+#noticias {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px auto;
+  gap: 20px;
+  max-width: 100%;
+  width: 100%;
+  padding: 0 10px;
+}
+
+#cards-container {
+  flex: 2;  
+}
+
+#logBox {
+  flex: 1;  
+  max-height: 500px;
+  overflow-y: auto;
+  background-color: #111;
+  color: #0f0;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #0f0;
+  font-family: monospace;
+  font-size: 14px;
+  box-shadow: 0 0 10px #0f0;
+  white-space: pre-wrap;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: #0d1b1e;
+  border: 1px solid #00ffcc;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+  color: #00ffcc;
+  font-family: 'Courier New', monospace;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(0, 255, 204, 0.7);
+  border-color: #00ffee;
+}
+
+.card h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.4rem;
+  color: #00ffee;
+}
+
+.card p {
+  margin: 0.5rem 0;
+  line-height: 1.4;
+}
+
+.card a {
+  color: #00ffee;
+  text-decoration: underline;
+}
+
+.card a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 5px #00ffee;
+}
+
+.card a:focus {
+  outline: none;
+}
+
+#tela-carregando {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at bottom, #000 0%, #050505 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
+  color: #00ffcc;
+  font-family: 'Courier New', monospace;
+  overflow: hidden;
+}
+
+.espaco {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(#00ffcc 1px, transparent 1px);
+  background-size: 4px 4px;
+  animation: moverEstrelas 60s linear infinite;
+  opacity: 0.2;
+}
+
+@keyframes moverEstrelas {
+  from { background-position: 0 0; }
+  to { background-position: 1000px 1000px; }
+}
+
+.terminal {
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 2rem;
+  border: 1px solid #00ffcc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #00ffcc;
+  text-align: left;
+  width: 90%;
+  max-width: 600px;
+}
+
+.linha {
+  margin: 0.5rem 0;
+  letter-spacing: 1px;
+  animation: piscar 1s infinite steps(1, start);
+}
+
+@keyframes piscar {
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.barra-progresso {
+  background: #003333;
+  border: 1px solid #00ffcc;
+  height: 12px;
+  width: 100%;
+  margin: 1rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.progresso {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #00ffcc, #006666);
+  animation: carregarBarra 3s forwards;
+}
+
+@keyframes carregarBarra {
+  to { width: 100%; }
+}
+
+.btn-update {
+  background-color: #0d1b1e;
+  color: #00ffcc;
+  border: 2px solid #00ffcc;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+  margin-left: 10px;
+}
+
+.btn-update:hover {
+  background-color: #00ffcc;
+  color: #0d1b1e;
+  border-color: #00ffee;
+  box-shadow: 0 0 20px rgba(0, 255, 204, 0.7);
+}
+
+.btn-update:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+  #noticias {
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  #cards-container, #logBox {
+      flex: none;
+      width: 100%;
+  }
+}
+
+.rodape {
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
